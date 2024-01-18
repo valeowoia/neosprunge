@@ -34,7 +34,7 @@ def get_paste(paste_id):
         return data, 200, {'Content-Type': 'text/plain; charset=utf-8'}
     else:
         return 'Please, use curl to send:\n' \
-               ' stdin | curl -F POST -d "sprunge=<-" http://neosprunge.local:9876/', 200
+               ' stdin | curl -F "sprunge=<-" http://neosprunge.local:9876/', 200
 
 @app.errorhandler(405)
 def method_not_allowed(e):
@@ -42,7 +42,7 @@ def method_not_allowed(e):
            '\n' \
            'Please, use curl to send:\n' \
            '\n' \
-           '<command> | curl -F POST -d "logger=<-" http://neosprunge.local:9876\n' \
+           '<command> | curl -F "logger=<-" http://neosprunge.local:9876\n' \
            '\n' \
            'Please refer issues to:\n' \
            'https://github.com/valeowoia/neosprunge\n' \
